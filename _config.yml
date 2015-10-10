@@ -2,7 +2,6 @@
 title: Rasistinen Suomi
 email: mikael.brunila@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
- Kaivuri on syksyllä 2015 perustettu tutkiva journalistinen ja akateeminen kollektiivi.
 baseurl: "/~mikaelbrunila/repository/" # the subpath of your site, e.g. /blog/
 url: "http://koti.kapsi.fi/" # the base hostname & protocol for your site
 twitter_username: mikaelbrunila
