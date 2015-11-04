@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
-  <script src="http://libs.cartocdn.com/cartodb.js/v3/3.11/cartodb.js"></script>
+  <link rel="stylesheet" href="https://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
+  <script src="https://libs.cartocdn.com/cartodb.js/v3/3.11/cartodb.js"></script>
   <!--[if lte IE 8]>
     <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v2/themes/css/cartodb.ie.css" />
   <![endif]-->
@@ -111,12 +112,14 @@
     function init(){
       // initiate leaflet map
       map = new L.Map('map', { 
-        center: [63.5,24],
-        zoom: 6
+        center: [64,24],
+        zoom: 5,
+        maxZoom: 6,
+        fullscreen: true
       })
 
       L.tileLayer('https://dnv9my2eseobd.cloudfront.net/v3/cartodb.map-4xtxp73f/{z}/{x}/{y}.png', {
-        attribution: 'Mapbox <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+        attribution: 'Mapbox <a href="https://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
       }).addTo(map);
 
       var layerUrl = 'https://hegemonni.cartodb.com/api/v2/viz/e3750f40-6e9d-11e5-b9d5-0e31c9be1b51/viz.json';
@@ -185,7 +188,7 @@
 <body onload="init()">
   <div id='map'></div>
   <div id='menu'>
-    <a href="#kaikki" id="kaikki" class="button kaikki">KAIKKI</a>
+    <a href="#kaikki" id="kaikki" class="button kaikki">KAIKKIA</a>
     <a href="#mielenosoitus" id="mielenosoitus" class="button mielenosoitus">MIELENOSOITUKSET</a>
     <a href="#vakivalta ja uhkailu" id="vakivalta ja uhkailu" class="button vakivalta ja uhkailu">VAKIVALTA JA UHKAILU</a>
     <a href="#omaisuusvahinko" id="omaisuusvahinko" class="button omaisuusvahinko">OMAISUUSVAHINKO</a>
