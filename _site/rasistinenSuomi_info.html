@@ -1,8 +1,7 @@
-<!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="https://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
-  <script src="https://libs.cartocdn.com/cartodb.js/v3/3.11/cartodb.js"></script>
+  <link rel="stylesheet" href="{{site.baseurl/cartodb.css}}" />
+  <script src="{{site.baseurl/cartodb.js}}"></script>
   <!--[if lte IE 8]>
     <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v2/themes/css/cartodb.ie.css" />
   <![endif]-->
@@ -112,10 +111,8 @@
     function init(){
       // initiate leaflet map
       map = new L.Map('map', { 
-        center: [64,24],
-        zoom: 5,
-        maxZoom: 6,
-        fullscreen: true
+        center: [63.5,24],
+        zoom: 6
       })
 
       L.tileLayer('https://dnv9my2eseobd.cloudfront.net/v3/cartodb.map-4xtxp73f/{z}/{x}/{y}.png', {
