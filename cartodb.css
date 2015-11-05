@@ -4224,4 +4224,17 @@ div.cartodb-timeslider .ui-slider-vertical .ui-slider-range-max {
    *  CartoDB ooltip light styles
    */
 
+  /**
+   *  OMAT
+   */
+
+  div.cartodb-popup {
+    position: relative;
+    width: 226px;
+    height: auto;
+    padding: 7px 0 0 0;
+    margin: 0;
+    background: url('../img/light.png') no-repeat -226px white;
+}
+
   
