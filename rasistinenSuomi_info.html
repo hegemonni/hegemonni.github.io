@@ -127,7 +127,7 @@
       //   cartocss: $("#cat-bbl").text()
       // }
 
-      cartodb.createLayer(map, layerUrl)
+      cartodb.createLayer(map, layerUrl, { https: true })
              .addTo(map)
              .on('done', function(layer) {
         var subLayerOptions = {
