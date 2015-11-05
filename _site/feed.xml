@@ -4,10 +4,10 @@
     <title>Rasistinen Suomi</title>
     <description>Kaivuri on syksyllä 2015 perustettu tutkiva journalistinen ja akateeminen kollektiivi.
 </description>
-    <link>http://hegemonni.github.io//</link>
-    <atom:link href="http://hegemonni.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 05 Nov 2015 16:01:27 +0100</pubDate>
-    <lastBuildDate>Thu, 05 Nov 2015 16:01:27 +0100</lastBuildDate>
+    <link>https://hegemonni.github.io//</link>
+    <atom:link href="https://hegemonni.github.io//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 05 Nov 2015 16:07:43 +0100</pubDate>
+    <lastBuildDate>Thu, 05 Nov 2015 16:07:43 +0100</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -52,8 +52,8 @@
 
 </description>
         <pubDate>Tue, 31 Mar 2015 17:31:54 +0200</pubDate>
-        <link>http://hegemonni.github.io//timeline/2015/03/31/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://hegemonni.github.io//timeline/2015/03/31/welcome-to-jekyll.html</guid>
+        <link>https://hegemonni.github.io//timeline/2015/03/31/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">https://hegemonni.github.io//timeline/2015/03/31/welcome-to-jekyll.html</guid>
         
         
         <category>timeline</category>
