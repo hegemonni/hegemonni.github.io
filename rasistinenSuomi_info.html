@@ -213,22 +213,22 @@
           LayerActions[$(this).attr('id')]();
         });
 
-        cartodb.createLayer(map, layerUrl, { https: true })
-        .addTo(map)
-        .on('done', function(layer) {
-        // change the query for the first layer
-        var subLayerOptions = {
-            sql: "SELECT * FROM ps_ek2015_1",
-            cartocss: $("#map-col").text()
-        }
+        // cartodb.createLayer(map, layerUrl, { https: true })
+        // .addTo(map)
+        // .on('done', function(layer) {
+        // // change the query for the first layer
+        // var subLayerOptions = {
+        //     sql: "SELECT * FROM ps_ek2015_1",
+        //     cartocss: $("#map-col").text()
+        // }
 
-        var sublayer = layer.getSubLayer(1);
+        // var sublayer = layer.getSubLayer(1);
 
-        sublayer.set(subLayerOptions);
-        sublayers.push(sublayer);
-          }).on('error', function() {
-            //log the error
-  });
+        // sublayer.set(subLayerOptions);
+        // sublayers.push(sublayer);
+        //   }).on('error', function() {
+        //     //log the error
+        // });
 
       }  
     </script>
