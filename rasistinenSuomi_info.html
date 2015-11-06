@@ -171,7 +171,7 @@
             cartocss: $("#map-col").text()
         }
 
-        var sublayer_1 = layer.getSubLayer(1);
+        var sublayer_1 = layer.getSubLayer(0);
 
         sublayer_1.set(subLayerOptions);
         sublayers.push(sublayer_1);
@@ -187,7 +187,7 @@
           cartocss: $("#cat-bbl").text()
         }
 
-        var sublayer = layer.getSubLayer(0);
+        var sublayer = layer.getSubLayer(1);
         sublayer.set(subLayerOptions);
         sublayers.push(sublayer);
         sublayer.infowindow.set('template', $('#infowindow_template').html());
