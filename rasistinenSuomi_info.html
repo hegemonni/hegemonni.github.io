@@ -60,34 +60,34 @@
      }
      /** bubble visualization */
      #rasistinensuomi_cartodb[osallistujamaara <= 400]{
-       marker-width: 25.0;
-     }
-     #rasistinensuomi_cartodb[osallistujamaara <= 360.09999999999997]{
-       marker-width: 23.3;
-     }
-     #rasistinensuomi_cartodb[osallistujamaara <= 320.2]{
-       marker-width: 21.7;
-     }
-     #rasistinensuomi_cartodb[osallistujamaara <= 280.3]{
        marker-width: 20.0;
      }
-     #rasistinensuomi_cartodb[osallistujamaara <= 240.39999999999998]{
+     #rasistinensuomi_cartodb[osallistujamaara <= 360.09999999999997]{
        marker-width: 18.3;
      }
-     #rasistinensuomi_cartodb[osallistujamaara <= 200.5]{
-       marker-width: 116.7;
+     #rasistinensuomi_cartodb[osallistujamaara <= 320.2]{
+       marker-width: 16.7;
      }
-     #rasistinensuomi_cartodb[osallistujamaara <= 160.6]{
+     #rasistinensuomi_cartodb[osallistujamaara <= 280.3]{
        marker-width: 15.0;
      }
-     #rasistinensuomi_cartodb[osallistujamaara <= 120.69999999999999]{
+     #rasistinensuomi_cartodb[osallistujamaara <= 240.39999999999998]{
        marker-width: 13.3;
      }
-     #rasistinensuomi_cartodb[osallistujamaara <= 80.8]{
+     #rasistinensuomi_cartodb[osallistujamaara <= 200.5]{
        marker-width: 11.7;
      }
-     #rasistinensuomi_cartodb[osallistujamaara <= 40.9]{
+     #rasistinensuomi_cartodb[osallistujamaara <= 160.6]{
        marker-width: 10.0;
+     }
+     #rasistinensuomi_cartodb[osallistujamaara <= 120.69999999999999]{
+       marker-width: 8.3;
+     }
+     #rasistinensuomi_cartodb[osallistujamaara <= 80.8]{
+       marker-width: 6.7;
+     }
+     #rasistinensuomi_cartodb[osallistujamaara <= 40.9]{
+       marker-width: 5.0;
      }
 
    </style>
@@ -149,10 +149,6 @@
  </div>
 </script>
 <script>
-var baseLayer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png',{
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
-});
-
   var map;
   function init(){
       // initiate leaflet map
@@ -160,7 +156,10 @@ var baseLayer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_only_labels/{
         center: [63.5,24],
         zoom: 6
       })
-      map.addLayer(baseLayer);
+
+      L.tileLayer('https://dnv9my2eseobd.cloudfront.net/v3/cartodb.map-4xtxp73f/{z}/{x}/{y}.png', {
+        attribution: 'Mapbox <a href="https://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+      }).addTo(map);
 
       var layerUrl = 'https://hegemonni.cartodb.com/api/v2/viz/e3750f40-6e9d-11e5-b9d5-0e31c9be1b51/viz.json';
       var sublayers = [];
@@ -169,6 +168,23 @@ var baseLayer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_only_labels/{
       //   sql: "SELECT * FROM #rasistinensuomi_cartodb",
       //   cartocss: $("#cat-bbl").text()
       // }
+
+      cartodb.createLayer(map, layerUrl, { https: true })
+      .addTo(map)
+      .on('done', function(layer) {
+        // change the query for the first layer
+        var subLayerOptions_0 = {
+          sql: "SELECT * FROM ps_ek2015_1",
+          cartocss: $("#map-col").text()
+        }
+
+        var sublayer_0 = layer.getSubLayer(0);
+
+        sublayer_0.set(subLayerOptions_0);
+        sublayers.push(sublayer_0);
+      }).on('error', function() {
+            //log the error
+          });
 
       cartodb.createLayer(map, layerUrl, { https: true })
       .addTo(map)
@@ -189,22 +205,7 @@ var baseLayer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_only_labels/{
       }).on('error', function() {
               //log the error
             });
-        cartodb.createLayer(map, layerUrl, { https: true })
-        .addTo(map)
-        .on('done', function(layer) {
-        // change the query for the first layer
-        var subLayerOptions_0 = {
-          sql: "SELECT * FROM ps_ek2015_1",
-          cartocss: $("#map-col").text()
-        }
 
-        var sublayer_0 = layer.getSubLayer(0);
-
-        sublayer_0.set(subLayerOptions_0);
-        sublayers.push(sublayer_0);
-        }).on('error', function() {
-            //log the error
-          });
         //we define the queries that will be performed when we click on the buttons, by modifying the SQL of our layer
         var LayerActions = {
           kaikki: function(){
