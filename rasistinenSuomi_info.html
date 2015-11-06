@@ -208,7 +208,14 @@ var baseLayer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{
               //log the error
             });
 
-      var LayerActions = {
+      var topPane = L.DomUtil.create('div', 'leaflet-top-pane', map.getPanes().mapPane);
+      var topLayer = new L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png', {
+        maxZoom: 17
+      }).addTo(map);
+      topPane.appendChild(topLayer.getContainer());
+      topLayer.setZIndex(7);
+        //we define the queries that will be performed when we click on the buttons, by modifying the SQL of our layer
+        var LayerActions = {
           kaikki: function(){
             sublayers[1].setSQL("SELECT * FROM rasistinensuomi_cartodb");
             return true;
@@ -237,15 +244,6 @@ var baseLayer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{
           //this gets the id of the different buttons and calls to LayerActions which responds according to the selected id
           LayerActions[$(this).attr('id')]();
         });
-
-      var topPane = L.DomUtil.create('div', 'leaflet-top-pane', map.getPanes().mapPane);
-      var topLayer = new L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png', {
-        maxZoom: 17
-      }).addTo(map);
-      topPane.appendChild(topLayer.getContainer());
-      topLayer.setZIndex(7);
-        //we define the queries that will be performed when we click on the buttons, by modifying the SQL of our layer
-        
 
       }  
     </script>
