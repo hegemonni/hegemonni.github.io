@@ -208,6 +208,9 @@
               //log the error
             });
 
+        var topLayer = new L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png', {
+          maxZoom: 17
+        }).addTo(map);
         //we define the queries that will be performed when we click on the buttons, by modifying the SQL of our layer
         var LayerActions = {
           kaikki: function(){
