@@ -33,80 +33,80 @@
     </style>
     <style type="cartocss/html" id="cat-bbl">
 
-                #rasistinensuomi_cartodb_1{
-                   marker-fill-opacity: 1.0;
-                   marker-line-color: #000000;
-                   marker-line-width: 1;
-                   marker-line-opacity: 1;
-                   marker-placement: point;
-                   marker-type: ellipse;
-                   marker-width: 7;
-                   marker-allow-overlap: true;
-                   marker-multi-policy: largest;
-                   marker-clip: false;
+      #rasistinensuomi_cartodb{
+       marker-fill-opacity: 1.0;
+       marker-line-color: #000000;
+       marker-line-width: 1;
+       marker-line-opacity: 1;
+       marker-placement: point;
+       marker-type: ellipse;
+       marker-width: 7;
+       marker-allow-overlap: true;
+       marker-multi-policy: largest;
+       marker-clip: false;
 
-                }
+     }
 
-                /** category visualization */
+     /** category visualization */
 
-                #rasistinensuomi_cartodb_1[tyyppi="Mielenosoitus"] {
-                   marker-fill: #FFCC00;
-                }
-                #rasistinensuomi_cartodb_1[tyyppi="Omaisuusvahinko"] {
-                   marker-fill: #FF5C00;
-                }
-                #rasistinensuomi_cartodb_1[tyyppi="Vakivalta ja uhkailu"] {
-                   marker-fill: #850200;
-                }
-                /** bubble visualization */
-                #rasistinensuomi_cartodb_1[osallistujamaara <= 400]{
-                   marker-width: 20.0;
-                }
-                #rasistinensuomi_cartodb_1[osallistujamaara <= 360.09999999999997]{
-                   marker-width: 18.3;
-                }
-                #rasistinensuomi_cartodb_1[osallistujamaara <= 320.2]{
-                   marker-width: 16.7;
-                }
-                #rasistinensuomi_cartodb_1[osallistujamaara <= 280.3]{
-                   marker-width: 15.0;
-                }
-                #rasistinensuomi_cartodb_1[osallistujamaara <= 240.39999999999998]{
-                   marker-width: 13.3;
-                }
-                #rasistinensuomi_cartodb_1[osallistujamaara <= 200.5]{
-                   marker-width: 11.7;
-                }
-                #rasistinensuomi_cartodb_1[osallistujamaara <= 160.6]{
-                   marker-width: 10.0;
-                }
-                #rasistinensuomi_cartodb_1[osallistujamaara <= 120.69999999999999]{
-                   marker-width: 8.3;
-                }
-                #rasistinensuomi_cartodb_1[osallistujamaara <= 80.8]{
-                   marker-width: 6.7;
-                }
-                #rasistinensuomi_cartodb_1[osallistujamaara <= 40.9]{
-                   marker-width: 5.0;
-                }
-  </style>
- <script type="infowindow/html" id="infowindow_template">
-  <div class="cartodb-popup">
-    <a href="#close" class="cartodb-popup-close-button close">x</a>
-    <div class="cartodb-popup-content-wrapper">
-     <div class="cartodb-popup-header">
-       <img style="width: 100%" src="{{content.data.kuva}}"></src>
+     #rasistinensuomi_cartodb[tyyppi="Mielenosoitus"] {
+       marker-fill: #FFCC00;
+     }
+     #rasistinensuomi_cartodb[tyyppi="Omaisuusvahinko"] {
+       marker-fill: #FF5C00;
+     }
+     #rasistinensuomi_cartodb[tyyppi="Vakivalta ja uhkailu"] {
+       marker-fill: #850200;
+     }
+     /** bubble visualization */
+     #rasistinensuomi_cartodb[osallistujamaara <= 400]{
+       marker-width: 20.0;
+     }
+     #rasistinensuomi_cartodb[osallistujamaara <= 360.09999999999997]{
+       marker-width: 18.3;
+     }
+     #rasistinensuomi_cartodb[osallistujamaara <= 320.2]{
+       marker-width: 16.7;
+     }
+     #rasistinensuomi_cartodb[osallistujamaara <= 280.3]{
+       marker-width: 15.0;
+     }
+     #rasistinensuomi_cartodb[osallistujamaara <= 240.39999999999998]{
+       marker-width: 13.3;
+     }
+     #rasistinensuomi_cartodb[osallistujamaara <= 200.5]{
+       marker-width: 11.7;
+     }
+     #rasistinensuomi_cartodb[osallistujamaara <= 160.6]{
+       marker-width: 10.0;
+     }
+     #rasistinensuomi_cartodb[osallistujamaara <= 120.69999999999999]{
+       marker-width: 8.3;
+     }
+     #rasistinensuomi_cartodb[osallistujamaara <= 80.8]{
+       marker-width: 6.7;
+     }
+     #rasistinensuomi_cartodb[osallistujamaara <= 40.9]{
+       marker-width: 5.0;
+     }
+   </style>
+   <script type="infowindow/html" id="infowindow_template">
+    <div class="cartodb-popup">
+      <a href="#close" class="cartodb-popup-close-button close">x</a>
+      <div class="cartodb-popup-content-wrapper">
+       <div class="cartodb-popup-header">
+         <img style="width: 100%" src="{{content.data.kuva}}"></src>
+       </div>
+       <div class="cartodb-popup-content">
+         <!-- content.data contains the field info -->
+         <h4>Paikka </h4>
+         <p>{{content.data.paikka}}</p>
+       </div>
      </div>
-     <div class="cartodb-popup-content">
-       <!-- content.data contains the field info -->
-       <h4>Paikka </h4>
-       <p>{{content.data.paikka}}</p>
-     </div>
+     <div class="cartodb-popup-tip-container"></div>
    </div>
-   <div class="cartodb-popup-tip-container"></div>
- </div>
-</script>
-<script>
+ </script>
+ <script>
   var map;
   function init(){
       // initiate leaflet map
@@ -119,11 +119,11 @@
         attribution: 'Mapbox <a href="https://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
       }).addTo(map);
 
-      var layerUrl = 'https://hegemonni.cartodb.com/api/v2/viz/63d86e72-84ae-11e5-8f68-0e31c9be1b51/viz.json';
+      var layerUrl = 'https://hegemonni.cartodb.com/api/v2/viz/e3750f40-6e9d-11e5-b9d5-0e31c9be1b51/viz.json';
       var sublayers = [];
       // change the query for the first layer
       // var subLayerOptions = {
-      //   sql: "SELECT * FROM #rasistinensuomi_cartodb_1",
+      //   sql: "SELECT * FROM #rasistinensuomi_cartodb",
       //   cartocss: $("#cat-bbl").text()
       // }
 
@@ -131,7 +131,7 @@
       .addTo(map)
       .on('done', function(layer) {
         var subLayerOptions = {
-          sql: "SELECT * FROM rasistinensuomi_cartodb_1",
+          sql: "SELECT * FROM rasistinensuomi_cartodb",
           cartocss: $("#cat-bbl").text()
         }
 
@@ -150,20 +150,20 @@
         //we define the queries that will be performed when we click on the buttons, by modifying the SQL of our layer
         var LayerActions = {
           kaikki: function(){
-            sublayers[0].setSQL("SELECT * FROM rasistinensuomi_cartodb_1");
+            sublayers[0].setSQL("SELECT * FROM rasistinensuomi_cartodb");
             return true;
           },
           mielenosoitus: function(){
-            sublayers[0].setSQL("SELECT * FROM rasistinensuomi_cartodb_1 WHERE tyyppi='Mielenosoitus'");
+            sublayers[0].setSQL("SELECT * FROM rasistinensuomi_cartodb WHERE tyyppi='Mielenosoitus'");
             return true;
           },
           vakivalta: function(){
-            sublayers[0].setSQL("SELECT * FROM rasistinensuomi_cartodb_1 WHERE tyyppi='Vakivalta ja uhkailu'");
+            sublayers[0].setSQL("SELECT * FROM rasistinensuomi_cartodb WHERE tyyppi='Vakivalta ja uhkailu'");
             return true;
           },
           omaisuusvahinko: function(){
             sublayers[0].set({
-              sql: "SELECT * FROM rasistinensuomi_cartodb_1 WHERE tyyppi = 'Omaisuusvahinko'",
+              sql: "SELECT * FROM rasistinensuomi_cartodb WHERE tyyppi = 'Omaisuusvahinko'",
               //as it is said, you can also add some CartoCSS code to make your points look like you want for the different queries
              // cartocss: "#ne_10m_populated_places_simple{ marker-fill: black; }"
            });
