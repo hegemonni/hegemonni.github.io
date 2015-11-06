@@ -182,20 +182,20 @@
         //we define the queries that will be performed when we click on the buttons, by modifying the SQL of our layer
         var LayerActions = {
           kaikki: function(){
-            sublayers[0].setSQL("SELECT * FROM rasistinensuomi_cartodb");
+            sublayers[0].setSQL("SELECT * FROM rasistinensuomi_cartodb_1");
             return true;
           },
           mielenosoitus: function(){
-            sublayers[0].setSQL("SELECT * FROM rasistinensuomi_cartodb WHERE tyyppi='Mielenosoitus'");
+            sublayers[0].setSQL("SELECT * FROM rasistinensuomi_cartodb_1 WHERE tyyppi='Mielenosoitus'");
             return true;
           },
           vakivalta: function(){
-            sublayers[0].setSQL("SELECT * FROM rasistinensuomi_cartodb WHERE tyyppi='Vakivalta ja uhkailu'");
+            sublayers[0].setSQL("SELECT * FROM rasistinensuomi_cartodb_1 WHERE tyyppi='Vakivalta ja uhkailu'");
             return true;
           },
           omaisuusvahinko: function(){
             sublayers[0].set({
-              sql: "SELECT * FROM rasistinensuomi_cartodb WHERE tyyppi = 'Omaisuusvahinko'",
+              sql: "SELECT * FROM rasistinensuomi_cartodb_1 WHERE tyyppi = 'Omaisuusvahinko'",
               //as it is said, you can also add some CartoCSS code to make your points look like you want for the different queries
              // cartocss: "#ne_10m_populated_places_simple{ marker-fill: black; }"
            });
