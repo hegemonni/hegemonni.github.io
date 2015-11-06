@@ -151,7 +151,7 @@
         attribution: 'Mapbox <a href="https://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
       }).addTo(map);
 
-      var layerUrl = 'https://hegemonni.cartodb.com/api/v2/viz/e3750f40-6e9d-11e5-b9d5-0e31c9be1b51/viz.json';
+      var layerUrl = 'https://hegemonni.cartodb.com/api/v2/viz/63d86e72-84ae-11e5-8f68-0e31c9be1b51/viz.json';
       var sublayers = [];
       // change the query for the first layer
       // var subLayerOptions = {
@@ -163,7 +163,7 @@
       .addTo(map)
       .on('done', function(layer) {
         var subLayerOptions = {
-          sql: "SELECT * FROM rasistinensuomi_cartodb",
+          sql: "SELECT * FROM rasistinensuomi_cartodb_1",
           cartocss: $("#cat-bbl").text()
         }
 
@@ -171,7 +171,7 @@
         sublayer.set(subLayerOptions);
         sublayers.push(sublayer);
         sublayer.infowindow.set('template', $('#infowindow_template').html());
-        
+
         sublayer.on('featureClick', function(e, latlng, pos, data) {
           alert("Hey! You clicked " + data.cartodb_id);
         });
