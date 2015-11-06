@@ -162,6 +162,23 @@
       //   cartocss: $("#cat-bbl").text()
       // }
 
+        cartodb.createLayer(map, layerUrl, { https: true })
+        .addTo(map)
+        .on('done', function(layer) {
+        // change the query for the first layer
+        var subLayerOptions = {
+            sql: "SELECT * FROM ps_ek2015_1",
+            cartocss: $("#map-col").text()
+        }
+
+        var sublayer_1 = layer.getSubLayer(1);
+
+        sublayer_1.set(subLayerOptions);
+        sublayers.push(sublayer_1);
+          }).on('error', function() {
+            //log the error
+        });
+
       cartodb.createLayer(map, layerUrl, { https: true })
       .addTo(map)
       .on('done', function(layer) {
@@ -211,23 +228,6 @@
           $(this).addClass('selected');
           //this gets the id of the different buttons and calls to LayerActions which responds according to the selected id
           LayerActions[$(this).attr('id')]();
-        });
-
-        cartodb.createLayer(map, layerUrl, { https: true })
-        .addTo(map)
-        .on('done', function(layer) {
-        // change the query for the first layer
-        var subLayerOptions = {
-            sql: "SELECT * FROM ps_ek2015_1",
-            cartocss: $("#map-col").text()
-        }
-
-        var sublayer_1 = layer.getSubLayer(1);
-
-        sublayer_1.set(subLayerOptions);
-        sublayers.push(sublayer_1);
-          }).on('error', function() {
-            //log the error
         });
 
       }  
