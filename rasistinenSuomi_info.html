@@ -149,7 +149,7 @@
  </div>
 </script>
 <script>
-  var baseLayer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',{
+var baseLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',{
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
   });
 
@@ -163,7 +163,7 @@
 
       map.addLayer(baseLayer);
 
-      var layerUrl = 'http://hegemonni.cartodb.com/api/v2/viz/e3750f40-6e9d-11e5-b9d5-0e31c9be1b51/viz.json';
+      var layerUrl = 'https://hegemonni.cartodb.com/api/v2/viz/e3750f40-6e9d-11e5-b9d5-0e31c9be1b51/viz.json';
       var sublayers = [];
       // change the query for the first layer
       // var subLayerOptions = {
