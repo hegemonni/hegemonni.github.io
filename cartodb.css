@@ -116,23 +116,13 @@
   }
 
   div.cartodb-popup {
-    position:absolute;
-    right:0;
-    width:226px;
-    height:auto;
-    padding:7px 0 0 0;
-    margin:0;
-    background:url('../img/light.png') no-repeat -226px 0;
-  }
-
-/*    div.cartodb-popup {
     position:relative;
     width:226px;
     height:auto;
     padding:7px 0 0 0;
     margin:0;
     background:url('../img/light.png') no-repeat -226px 0;
-  }*/
+  }
 
   div.cartodb-popup div.cartodb-popup-content-wrapper {
     width:190px;
