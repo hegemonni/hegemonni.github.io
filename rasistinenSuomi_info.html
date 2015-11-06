@@ -157,8 +157,8 @@
         zoom: 6
       })
 
-      L.tileLayer('https://dnv9my2eseobd.cloudfront.net/v3/cartodb.map-4xtxp73f/{z}/{x}/{y}.png', {
-        attribution: 'Mapbox <a href="https://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+      L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/{basemap-name}/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
       }).addTo(map);
 
       var layerUrl = 'https://hegemonni.cartodb.com/api/v2/viz/e3750f40-6e9d-11e5-b9d5-0e31c9be1b51/viz.json';
