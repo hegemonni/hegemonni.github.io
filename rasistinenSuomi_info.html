@@ -163,7 +163,7 @@
 
       map.addLayer(baseLayer);
 
-      var layerUrl = 'https://hegemonni.cartodb.com/api/v2/viz/e3750f40-6e9d-11e5-b9d5-0e31c9be1b51/viz.json';
+      var layerUrl = 'http://hegemonni.cartodb.com/api/v2/viz/e3750f40-6e9d-11e5-b9d5-0e31c9be1b51/viz.json';
       var sublayers = [];
       // change the query for the first layer
       // var subLayerOptions = {
@@ -209,7 +209,7 @@
             });
 
       var topPane = L.DomUtil.create('div', 'leaflet-top-pane', map.getPanes().mapPane);
-      var topLayer = new L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png', {
+      var topLayer = new L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png', {
         maxZoom: 17
       }).addTo(map);
       topPane.appendChild(topLayer.getContainer());
