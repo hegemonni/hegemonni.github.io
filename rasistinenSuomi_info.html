@@ -189,7 +189,22 @@ var baseLayer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_only_labels/{
       }).on('error', function() {
               //log the error
             });
+        cartodb.createLayer(map, layerUrl, { https: true })
+        .addTo(map)
+        .on('done', function(layer) {
+        // change the query for the first layer
+        var subLayerOptions_0 = {
+          sql: "SELECT * FROM ps_ek2015_1",
+          cartocss: $("#map-col").text()
+        }
 
+        var sublayer_0 = layer.getSubLayer(0);
+
+        sublayer_0.set(subLayerOptions_0);
+        sublayers.push(sublayer_0);
+        }).on('error', function() {
+            //log the error
+          });
         //we define the queries that will be performed when we click on the buttons, by modifying the SQL of our layer
         var LayerActions = {
           kaikki: function(){
@@ -220,23 +235,6 @@ var baseLayer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_only_labels/{
           //this gets the id of the different buttons and calls to LayerActions which responds according to the selected id
           LayerActions[$(this).attr('id')]();
         });
-
-              cartodb.createLayer(map, layerUrl, { https: true })
-      .addTo(map)
-      .on('done', function(layer) {
-        // change the query for the first layer
-        var subLayerOptions_0 = {
-          sql: "SELECT * FROM ps_ek2015_1",
-          cartocss: $("#map-col").text()
-        }
-
-        var sublayer_0 = layer.getSubLayer(0);
-
-        sublayer_0.set(subLayerOptions_0);
-        sublayers.push(sublayer_0);
-      }).on('error', function() {
-            //log the error
-          });
 
       }  
     </script>
