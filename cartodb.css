@@ -116,7 +116,7 @@
   }
 
   div.cartodb-popup {
-    position:relative;
+    position:bottom|right;
     width:226px;
     height:auto;
     padding:7px 0 0 0;
