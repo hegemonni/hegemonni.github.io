@@ -164,14 +164,6 @@
       map.addLayer(baseLayer);
 
       var layerUrl = 'https://hegemonni.cartodb.com/api/v2/viz/e3750f40-6e9d-11e5-b9d5-0e31c9be1b51/viz.json';
-      
-      var topPane = L.DomUtil.create('div', 'leaflet-top-pane', map.getPanes().mapPane);
-      var topLayer = new L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png', {
-        maxZoom: 17
-      }).addTo(map);
-      topPane.appendChild(topLayer.getContainer());
-      topLayer.setZIndex(7);
-
       var sublayers = [];
       // change the query for the first layer
       // var subLayerOptions = {
@@ -216,6 +208,12 @@
               //log the error
             });
 
+      var topPane = L.DomUtil.create('div', 'leaflet-top-pane', map.getPanes().mapPane);
+      var topLayer = new L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png', {
+        maxZoom: 17
+      }).addTo(map);
+      topPane.appendChild(topLayer.getContainer());
+      topLayer.setZIndex(7);
         //we define the queries that will be performed when we click on the buttons, by modifying the SQL of our layer
         var LayerActions = {
           kaikki: function(){
