@@ -199,7 +199,12 @@ var baseLayer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{
         var sublayer = layer.getSubLayer(1);
         sublayer.set(subLayerOptions);
         sublayers.push(sublayer);
-        sublayer.infowindow.set('template', $('#infowindow_template').html());
+        sublayer.infowindow.set({
+              offset: [28,20],
+              template: $('#infowindow_template').html(),
+              width: 350,
+              maxHeight: 400
+            });
 
         sublayer.on('featureClick', function(e, latlng, pos, data) {
           alert("Hey! You clicked " + data.cartodb_id);
