@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <title>Rasismi Suomessa</title>
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.12/themes/css/cartodb.css" /> 
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+      <style>
+      html, body {width:100%; height:100%; padding: 0; margin: 0;}
+      #map { width: 100%; height:100%; background: black;}
+      #menu { position: absolute; top: 5px; right: 10px; width: 120px; height:60px; background: transparent; z-index:10;}
+      #menu a { 
+        margin: 15px 10px 0 0;
+        float: right;
+        vertical-align: baseline;
+        width: 120px;
+        padding: 10px;
+        text-align: center;
+        font: bold 10px "Helvetica",Arial;
+        line-height: normal;
+        color: #555;
+        border-radius: 4px;
+        border: 1px solid #777777;
+        background: #ffffff;
+        text-decoration: none;
+        cursor: pointer;
+        opacity: 0.4;
+      }
+      #menu a.selected,
+      #menu a:hover { 
+        color: #F84F40;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div id="map"></div>
+    <div id='menu'>
+      <a href="#kaikki" id="kaikki" class="button kaikki">KAIKKI</a>
+      <a href="#mielenosoitus" id="mielenosoitus" class="button mielenosoitus">MIELENOSOITUKSET</a>
+      <a href="#vakivalta" id="vakivalta" class="button vakivalta">VAKIVALTA JA UHKAILU</a>
+      <a href="#omaisuusvahinko" id="omaisuusvahinko" class="button omaisuusvahinko">OMAISUUSVAHINKO</a>
+    </div>
+<!--     <div id="overlay"></div> -->
+
+    <!--Custom html for the infowindow customization-->
+    <!--You can write simple html or use Mustache templates http://mustache.github.com/-->
+    <!--Content.data contains the field info-->
+    <script type="infowindow/html" id="infowindow_template">
+      <div class="cartodb-popup">
+        <a href="#close" class="cartodb-popup-close-button close">x</a>
+         <div class="cartodb-popup-content-wrapper">
+           <div class="cartodb-popup-cont">
+            <img src="{{content.data.pic}}" />
+            <h4>{{content.data.kuvaus}}</h4>
+            {{#content.data.kuvaus}}
+              <a class="videoButton" href="{{content.data.video_url}}" target="_blank"> </a>
+            {{/content.data.kuvaus}}
+            <p>{{content.data.kuvaus}}</p>
+           </div>
+         </div>
+         <div class="cartodb-popup-tip-container"></div>
+      </div>
+    </script>
+
+    <!--Include the js. Please be sure that you use a locked version in case you go to production-->
+    <script src="http://libs.cartocdn.com/cartodb.js/v3/3.12/cartodb.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+  </body>
+</html>

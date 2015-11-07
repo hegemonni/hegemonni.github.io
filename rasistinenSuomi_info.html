@@ -200,14 +200,14 @@ var baseLayer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{
         sublayer.set(subLayerOptions);
         sublayers.push(sublayer);
         sublayer.infowindow.set({
-              offset: [28,20],
+              offset: 'bottom|left',
               template: $('#infowindow_template').html(),
               width: 350,
               maxHeight: 400
             });
 
         sublayer.on('featureClick', function(e, latlng, pos, data) {
-          alert("Hey! You clicked " + data.cartodb_id);
+          console.log(e, latlng, pos, data, layerNumber);
         });
       }).on('error', function() {
               //log the error
