@@ -15,7 +15,7 @@ function main() {
       // there are two layers, base layer and points layer
       var sublayer = layers[1].getSubLayer(1);
       sublayer.set({ 'interactivity': ['cartodb_id', 'kuvaus', 'facebook_sivu']});
-
+      // sublayer.setInteraction(true)
       // Set the custom infowindow template defined on the html
       sublayer.infowindow.set('template', $('#infowindow_template').html());
 
