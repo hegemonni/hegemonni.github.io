@@ -2788,7 +2788,7 @@
                             else b = a[y.status], y.then(b, b)
                         }
                         return this
-                    }, p.url = ((a || p.url) + "").replace(Ua, "").replace(Za, Qa[1] + "//"), p.dataTypes = J.trim(p.dataType || "*").toLowerCase().split(bb), null == p.crossDomain && (l = db.exec(p.url.toLowerCase()), p.crossDomain = !(!l || l[1] == Qa[1] && l[2] == Qa[2] && (l[3] || ("https:" === l[1] ? 80 : 443)) == (Qa[3] || ("https:" === Qa[1] ? 80 : 443)))), p.data && p.processData && "string" != typeof p.data && (p.data = J.param(p.data, p.traditional)), n(fb, p, c, y), 2 === x) return !1;
+                    }, p.url = ((a || p.url) + "").replace(Ua, "").replace(Za, Qa[1] + "//"), p.dataTypes = J.trim(p.dataType || "*").toLowerCase().split(bb), null == p.crossDomain && (l = db.exec(p.url.toLowerCase()), p.crossDomain = !(!l || l[1] == Qa[1] && l[2] == Qa[2] && (l[3] || ("http:" === l[1] ? 80 : 443)) == (Qa[3] || ("http:" === Qa[1] ? 80 : 443)))), p.data && p.processData && "string" != typeof p.data && (p.data = J.param(p.data, p.traditional)), n(fb, p, c, y), 2 === x) return !1;
                 if (m = p.global, p.type = p.type.toUpperCase(), p.hasContent = !Ya.test(p.type), m && 0 === J.active++ && J.event.trigger("ajaxStart"), !p.hasContent && (p.data && (p.url += ($a.test(p.url) ? "&" : "?") + p.data, delete p.data), e = p.url, p.cache === !1)) {
                     var z = J.now(),
                         A = p.url.replace(cb, "$1_=" + z);
@@ -6569,7 +6569,7 @@
                             f = d.add(b.multiplyBy(1 + 2 * a)._round());
                         this._pathViewport = new e.Bounds(d, f)
                     }
-                }), e.Path.SVG_NS = "https://www.w3.org/2000/svg", e.Browser.svg = !(!b.createElementNS || !b.createElementNS(e.Path.SVG_NS, "svg").createSVGRect), e.Path = e.Path.extend({
+                }), e.Path.SVG_NS = "http://www.w3.org/2000/svg", e.Browser.svg = !(!b.createElementNS || !b.createElementNS(e.Path.SVG_NS, "svg").createSVGRect), e.Path = e.Path.extend({
                     statics: {
                         SVG: e.Browser.svg
                     },
@@ -7986,7 +7986,7 @@
                 }, e.Control.Attribution = e.Control.extend({
                     options: {
                         position: "bottomright",
-                        prefix: '<a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>'
+                        prefix: '<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>'
                     },
                     initialize: function(a) {
                         e.setOptions(this, a), this._attributions = {}
@@ -9496,7 +9496,7 @@
             }
             var d = {},
                 e = a.threshold || 400,
-                f = "https://a.tiles.mapbox.com/mapbox/1.0.0/blue-marble-topo-bathy-jul/0/0/0.png?preventcache=" + +new Date,
+                f = "http://a.tiles.mapbox.com/mapbox/1.0.0/blue-marble-topo-bathy-jul/0/0/0.png?preventcache=" + +new Date,
                 g = 1,
                 h = void 0 === a.auto ? !0 : a.auto;
             return d.bw = function(a) {
@@ -12781,8 +12781,8 @@
                             return a
                         }
                     }), cdb.config = new Config, cdb.config.set({
-                        cartodb_attributions: "CartoDB <a href='https://cartodb.com/attributions' target='_blank'>attribution</a>",
-                        cartodb_logo_link: "https://www.cartodb.com"
+                        cartodb_attributions: "CartoDB <a href='http://cartodb.com/attributions' target='_blank'>attribution</a>",
+                        cartodb_logo_link: "http://www.cartodb.com"
                     })
                 }(),
                 function() {
@@ -13239,10 +13239,10 @@
                         debug: !1,
                         tiler_domain: "cartodb.com",
                         tiler_port: "80",
-                        tiler_protocol: "https",
+                        tiler_protocol: "http",
                         sql_api_domain: "cartodb.com",
                         sql_api_port: "80",
-                        sql_api_protocol: "https",
+                        sql_api_protocol: "http",
                         extra_params: {},
                         cdn_url: null,
                         maxZoom: 28
@@ -14263,7 +14263,7 @@
                     _renderItem: function(a) {
                         view = new cdb.geo.ui.LegendItem({
                             model: a,
-                            className: a.get("value") && a.get("value").indexOf("https") >= 0 || a.get("type") && "image" == a.get("type") ? "bkg" : "",
+                            className: a.get("value") && a.get("value").indexOf("http") >= 0 || a.get("type") && "image" == a.get("type") ? "bkg" : "",
                             template: '		<div class="bullet" style="background: <%= value %>"></div> <%= name || ((name === false) ? "false": "null") %>'
                         }), this.$el.find("ul").append(view.render())
                     },
@@ -14300,7 +14300,7 @@
                     _renderItem: function(a) {
                         view = new cdb.geo.ui.LegendItem({
                             model: a,
-                            className: a.get("value") && a.get("value").indexOf("https") >= 0 ? "bkg" : "",
+                            className: a.get("value") && a.get("value").indexOf("http") >= 0 ? "bkg" : "",
                             template: '		<div class="bullet" style="background: <%= value %>"></div> <%= name || ((name === false) ? "false": "null") %>'
                         }), this.$el.find("ul").append(view.render())
                     },
@@ -14444,7 +14444,7 @@
                     _renderItem: function(a) {
                         view = new cdb.geo.ui.LegendItem({
                             model: a,
-                            className: a.get("value") && a.get("value").indexOf("https") >= 0 ? "bkg" : "",
+                            className: a.get("value") && a.get("value").indexOf("http") >= 0 ? "bkg" : "",
                             template: '		<div class="bullet" style="background:<%= value %>"></div>\n		<%= name || "null" %>'
                         }), this.$el.find("ul").append(view.render())
                     },
@@ -16733,10 +16733,10 @@
                             added: !1,
                             tiler_domain: "cartodb.com",
                             tiler_port: "80",
-                            tiler_protocol: "https",
+                            tiler_protocol: "http",
                             sql_api_domain: "cartodb.com",
                             sql_api_port: "80",
-                            sql_api_protocol: "https",
+                            sql_api_protocol: "http",
                             maxZoom: 30,
                             extra_params: {},
                             cdn_url: null,
@@ -17332,10 +17332,10 @@
                                 added: !1,
                                 tiler_domain: "cartodb.com",
                                 tiler_port: "80",
-                                tiler_protocol: "https",
+                                tiler_protocol: "http",
                                 sql_api_domain: "cartodb.com",
                                 sql_api_port: "80",
-                                sql_api_protocol: "https",
+                                sql_api_protocol: "http",
                                 extra_params: {},
                                 cdn_url: null,
                                 subdomains: null
@@ -18603,7 +18603,7 @@
                             var b = a.sql_api_port,
                                 c = a.sql_api_domain + (b ? ":" + b : ""),
                                 d = a.sql_api_protocol,
-                                e = "v1"; - 1 !== c.indexOf("cartodb.com") && (d = "https", c = "cartodb.com", e = "v2");
+                                e = "v1"; - 1 !== c.indexOf("cartodb.com") && (d = "http", c = "cartodb.com", e = "v2");
                             var f = new cartodb.SQL({
                                 user: a.user_name,
                                 protocol: d,
@@ -18909,7 +18909,7 @@
                         },
                         _getDefaultBasemapLayer: function() {
                             return {
-                                type: "https",
+                                type: "http",
                                 options: {
                                     urlTemplate: this.defaults.basemap_url_template,
                                     subdomains: this.defaults.basemap_subdomains
@@ -18919,7 +18919,7 @@
                         _getHTTPBasemapLayer: function(a) {
                             var b = a.options.urlTemplate;
                             return b ? {
-                                type: "https",
+                                type: "http",
                                 options: {
                                     urlTemplate: b,
                                     subdomains: a.options.subdomains || this.defaults.basemap_subdomains
@@ -19286,7 +19286,7 @@
                         var d = null;
                         return void 0 !== a.layers || void 0 !== (a.kind || a.type) ? void _.defer(function() {
                             c(a)
-                        }) : (void 0 !== a.table && void 0 !== a.user ? d = b(a) : a.indexOf && 0 === a.indexOf("https") && (d = a), void(d ? cdb.core.Loader.get(d, c) : _.defer(function() {
+                        }) : (void 0 !== a.table && void 0 !== a.user ? d = b(a) : a.indexOf && 0 === a.indexOf("http") && (d = a), void(d ? cdb.core.Loader.get(d, c) : _.defer(function() {
                             c(null)
                         })))
                     }
