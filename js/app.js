@@ -24,7 +24,7 @@ function main() {
         layer: markers,
         type: 'tooltip',
         position: 'top|center',
-        template: '<h4>10.10.2015 Paikka</h4>'
+        template: '<p>10.10.2015 Paikka<p4>'
         // template: '<p>{{kuvaus}}</p>'
       });
 
