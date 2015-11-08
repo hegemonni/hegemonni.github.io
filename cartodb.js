@@ -14622,15 +14622,15 @@
                     SYSTEM_COLUMNS: ["the_geom", "the_geom_webmercator", "created_at", "updated_at", "cartodb_id", "cartodb_georef_status"],
                     defaults: {
                         template_name: "infowindow_light",
-                        // latlng: [0, 0],
-                        // offset: [28, 0],
-                        // maxHeight: 180,
-                        // autoPan: !0,
-                        // template: "",
-                        // content: "",
-                        // visibility: !1,
-                        // alternative_names: {},
-                        // fields: null
+                        latlng: [0, 0],
+                        offset: [28, 0],
+                        maxHeight: 180,
+                        autoPan: !0,
+                        template: "",
+                        content: "",
+                        visibility: !1,
+                        alternative_names: {},
+                        fields: null
                     },
                     clearFields: function() {
                         this.set({
