@@ -9496,7 +9496,7 @@
             }
             var d = {},
                 e = a.threshold || 400,
-                f = "http://a.tiles.mapbox.com/mapbox/1.0.0/blue-marble-topo-bathy-jul/0/0/0.png?preventcache=" + +new Date,
+                f = "https://a.tiles.mapbox.com/mapbox/1.0.0/blue-marble-topo-bathy-jul/0/0/0.png?preventcache=" + +new Date,
                 g = 1,
                 h = void 0 === a.auto ? !0 : a.auto;
             return d.bw = function(a) {
@@ -13239,10 +13239,10 @@
                         debug: !1,
                         tiler_domain: "cartodb.com",
                         tiler_port: "80",
-                        tiler_protocol: "http",
+                        tiler_protocol: "https",
                         sql_api_domain: "cartodb.com",
                         sql_api_port: "80",
-                        sql_api_protocol: "http",
+                        sql_api_protocol: "https",
                         extra_params: {},
                         cdn_url: null,
                         maxZoom: 28
@@ -16733,10 +16733,10 @@
                             added: !1,
                             tiler_domain: "cartodb.com",
                             tiler_port: "80",
-                            tiler_protocol: "http",
+                            tiler_protocol: "https",
                             sql_api_domain: "cartodb.com",
                             sql_api_port: "80",
-                            sql_api_protocol: "http",
+                            sql_api_protocol: "https",
                             maxZoom: 30,
                             extra_params: {},
                             cdn_url: null,
@@ -17332,10 +17332,10 @@
                                 added: !1,
                                 tiler_domain: "cartodb.com",
                                 tiler_port: "80",
-                                tiler_protocol: "http",
+                                tiler_protocol: "https",
                                 sql_api_domain: "cartodb.com",
                                 sql_api_port: "80",
-                                sql_api_protocol: "http",
+                                sql_api_protocol: "https",
                                 extra_params: {},
                                 cdn_url: null,
                                 subdomains: null
@@ -18919,7 +18919,7 @@
                         _getHTTPBasemapLayer: function(a) {
                             var b = a.options.urlTemplate;
                             return b ? {
-                                type: "http",
+                                type: "https",
                                 options: {
                                     urlTemplate: b,
                                     subdomains: a.options.subdomains || this.defaults.basemap_subdomains
