@@ -13,22 +13,25 @@ function main() {
   cartodb.createVis('map', 'https://hegemonni.cartodb.com/api/v2/viz/7ae05c4e-84f7-11e5-b1b2-0e31c9be1b51/viz.json', options)
     .done(function(vis, layers) {
       // there are two layers, base layer and points layer
-      var sublayer = layers[1].getSubLayer(1);
-      sublayer.set({ 'interactivity': ['cartodb_id', 'kuvaus', 'facebook_sivu']});
+      var markers = layers[1].getSubLayer(1);
+      markers.set({ 'interactivity': ['cartodb_id', 'kuvaus', 'facebook_sivu']});
       // sublayer.setInteraction(true)
       // Set the custom infowindow template defined on the html
-      sublayer.infowindow.set('template', $('#infowindow_template').html());
+      // markers.infowindow.set('template');
 
       // add the tooltip show when hover on the point
       vis.addOverlay({
+        layer: markers,
         type: 'tooltip',
         position: 'top|center',
-        template: '<p>{{kuvaus}}</p>'
+        template: '<h4>10.10.2015 Paikka</h4>'
+        // template: '<p>{{kuvaus}}</p>'
       });
 
       vis.addOverlay({
         type: 'infobox',
-        template: '<h3>{{nimi}}</h3><p>{{kuvaus}}</p>',
+        template: '<h3>Otsikko</h3><img src="http://hs10.snstatic.fi/webkuva/taysi/700/1305986659655?ts=765" height="auto" width="100%"</img><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><p>{{kuvaus}}</p>',
+        // template: '<h3>{{nimi}}</h3><p>{{kuvaus}}</p>',
         width: 200,
         position: 'bottom|left'
       });
@@ -36,19 +39,19 @@ function main() {
       var LayerActions = {
           
           kaikki: function(){
-            sublayer.setSQL("SELECT * FROM rasistinensuomi_cartodb");
+            markers.setSQL("SELECT * FROM rasistinensuomi_cartodb");
             return true;
           },
           mielenosoitus: function(){
-            sublayer.setSQL("SELECT * FROM rasistinensuomi_cartodb WHERE tyyppi='Mielenosoitus'");
+            markers.setSQL("SELECT * FROM rasistinensuomi_cartodb WHERE tyyppi='Mielenosoitus'");
             return true;
           },
           vakivalta: function(){
-            sublayer.setSQL("SELECT * FROM rasistinensuomi_cartodb WHERE tyyppi='Vakivalta ja uhkailu'");
+            markers.setSQL("SELECT * FROM rasistinensuomi_cartodb WHERE tyyppi='Vakivalta ja uhkailu'");
             return true;
           },
           omaisuusvahinko: function(){
-            sublayer.set({
+            markers.set({
               sql: "SELECT * FROM rasistinensuomi_cartodb WHERE tyyppi = 'Omaisuusvahinko'",
               //as it is said, you can also add some CartoCSS code to make your points look like you want for the different queries
              // cartocss: "#ne_10m_populated_places_simple{ marker-fill: black; }"
