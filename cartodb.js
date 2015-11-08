@@ -16610,7 +16610,7 @@
                     if ("undefined" != typeof L) {
                         var a = function(a) {
                                 return {
-                                    url: "http://{s}.basemaps.cartocdn.com/" + a + "_all/{z}/{x}/{y}.png",
+                                    url: "https://{s}.basemaps.cartocdn.com/" + a + "_all/{z}/{x}/{y}.png",
                                     subdomains: "abcd",
                                     minZoom: 0,
                                     maxZoom: 18,
@@ -18837,7 +18837,7 @@
                     };
                     var b = function() {
                         Map.call(this, this), this.imageOptions = {}, this.error = null, this.supported_formats = ["png", "jpg"], this.defaults = {
-                            basemap_url_template: "http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
+                            basemap_url_template: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
                             basemap_subdomains: ["a", "b", "c"],
                             format: "png",
                             zoom: 10,
