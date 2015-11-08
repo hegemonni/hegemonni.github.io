@@ -10,7 +10,7 @@ function main() {
     // https: true
   };
 
-  cartodb.createVis('map', 'viz.json', options)
+  cartodb.createVis('map', 'https://hegemonni.cartodb.com/api/v2/viz/7ae05c4e-84f7-11e5-b1b2-0e31c9be1b51/viz.json', options)
     .done(function(vis, layers) {
       // there are two layers, base layer and points layer
       var sublayer = layers[1].getSubLayer(1);
