@@ -7,7 +7,7 @@ function main() {
     zoom: 6, 
     zoomControl: true,  // dont add the zoom overlay (it is added by default)
     loaderControl: false, //dont show tiles loader
-    https: true
+    // https: true
   };
 
   cartodb.createVis('map', 'https://hegemonni.cartodb.com/api/v2/viz/7ae05c4e-84f7-11e5-b1b2-0e31c9be1b51/viz.json', options)
