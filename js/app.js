@@ -16,8 +16,8 @@ function main() {
       var markers = layers[1].getSubLayer(1);
       markers.set({ 'interactivity': ['cartodb_id', 'kuvaus', 'facebook_sivu']});
       // sublayer.setInteraction(true)
-      // Set the custom infowindow template defined on the html
-      markers.infowindow.set('template', $('#infowindow_template').html());
+      // // Set the custom infowindow template defined on the html
+      // markers.infowindow.set('template', $('#infowindow_template').html());
 
       // add the tooltip show when hover on the point
       vis.addOverlay({
