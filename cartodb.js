@@ -14767,25 +14767,25 @@
                         }
                     }
                 }), cdb.geo.ui.Infowindow = cdb.core.View.extend({
-                    className: "cartodb-infowindow",
-                    spin_options: {
-                        lines: 10,
-                        length: 0,
-                        width: 4,
-                        radius: 6,
-                        corners: 1,
-                        rotate: 0,
-                        color: "rgba(0,0,0,0.5)",
-                        speed: 1,
-                        trail: 60,
-                        shadow: !1,
-                        hwaccel: !0,
-                        className: "spinner",
-                        zIndex: 2e9,
-                        top: "auto",
-                        left: "auto",
-                        position: "absolute"
-                    },
+                    // className: "cartodb-infowindow",
+                    // spin_options: {
+                    //     lines: 10,
+                    //     length: 0,
+                    //     width: 4,
+                    //     radius: 6,
+                    //     corners: 1,
+                    //     rotate: 0,
+                    //     color: "rgba(0,0,0,0.5)",
+                    //     speed: 1,
+                    //     trail: 60,
+                    //     shadow: !1,
+                    //     hwaccel: !0,
+                    //     className: "spinner",
+                    //     zIndex: 2e9,
+                    //     top: "auto",
+                    //     left: "auto",
+                    //     position: "absolute"
+                    // },
                     events: {
                         "click .close": "_closeInfowindow",
                         "touchstart .close": "_closeInfowindow",

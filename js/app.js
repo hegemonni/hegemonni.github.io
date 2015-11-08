@@ -31,7 +31,7 @@ function main() {
       vis.addOverlay({
         layer: markers,
         type: 'infobox',
-        template: '<h3>Otsikko</h3><img src="https://hs10.snstatic.fi/webkuva/taysi/700/1305986659655?ts=765" height="auto" width="100%"</img><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><p>{{kuvaus}}</p>',
+        template: '<h3>Otsikko</h3><img src="http://hs10.snstatic.fi/webkuva/taysi/700/1305986659655?ts=765" height="auto" width="100%"</img><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><p>{{kuvaus}}</p>',
         // template: '<h3>{{nimi}}</h3><p>{{kuvaus}}</p>',
         width: 200,
         position: 'bottom|left'
