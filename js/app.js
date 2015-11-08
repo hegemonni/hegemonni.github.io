@@ -17,7 +17,7 @@ function main() {
       markers.set({ 'interactivity': ['cartodb_id', 'kuvaus', 'facebook_sivu']});
       // sublayer.setInteraction(true)
       // Set the custom infowindow template defined on the html
-      // markers.infowindow.set('template');
+      markers.infowindow.set('template');
 
       // add the tooltip show when hover on the point
       vis.addOverlay({
@@ -29,6 +29,7 @@ function main() {
       });
 
       vis.addOverlay({
+        layer: markers,
         type: 'infobox',
         template: '<h3>Otsikko</h3><img src="http://hs10.snstatic.fi/webkuva/taysi/700/1305986659655?ts=765" height="auto" width="100%"</img><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><p>{{kuvaus}}</p>',
         // template: '<h3>{{nimi}}</h3><p>{{kuvaus}}</p>',
