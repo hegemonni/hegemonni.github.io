@@ -6,11 +6,11 @@ function main() {
     center: [64, 24],
     zoom: 6, 
     zoomControl: true,  // dont add the zoom overlay (it is added by default)
-    loaderControl: false, //dont show tiles loader
-    force_https: true
+    loaderControl: false //dont show tiles loader
+    // https: true
   };
 
-  cartodb.createVis('map', 'https://hegemonni.cartodb.com/api/v2/viz/7ae05c4e-84f7-11e5-b1b2-0e31c9be1b51/viz.json', options)
+  cartodb.createVis('map', 'viz.json', options)
     .done(function(vis, layers) {
       // there are two layers, base layer and points layer
       var sublayer = layers[1].getSubLayer(1);
@@ -28,7 +28,7 @@ function main() {
 
       vis.addOverlay({
         type: 'infobox',
-        template: '<h3>{{kuvaus}}</h3><p>{{kuvaus}}</p>',
+        template: '<h3>{{nimi}}</h3><p>{{kuvaus}}</p>',
         width: 200,
         position: 'bottom|left'
       });
