@@ -6569,7 +6569,7 @@
                             f = d.add(b.multiplyBy(1 + 2 * a)._round());
                         this._pathViewport = new e.Bounds(d, f)
                     }
-                }), e.Path.SVG_NS = "http://www.w3.org/2000/svg", e.Browser.svg = !(!b.createElementNS || !b.createElementNS(e.Path.SVG_NS, "svg").createSVGRect), e.Path = e.Path.extend({
+                }), e.Path.SVG_NS = "https://www.w3.org/2000/svg", e.Browser.svg = !(!b.createElementNS || !b.createElementNS(e.Path.SVG_NS, "svg").createSVGRect), e.Path = e.Path.extend({
                     statics: {
                         SVG: e.Browser.svg
                     },
@@ -9562,7 +9562,7 @@
                 };
             return e.tileRegexp = function() {
                 var a = b.tiles[0],
-                    c = a.indexOf("?"); - 1 !== c && (a = a.substr(0, c)), a = a.replace(/[\(\)\?\$\*\+\^]/g, "."), 0 === a.indexOf("https") ? a = a.replace(":443", "[:0-9]*") : 0 === a.indexOf("http") && (a = a.replace(":80", "[:0-9]*"));
+                    c = a.indexOf("?"); - 1 !== c && (a = a.substr(0, c)), a = a.replace(/[\(\)\?\$\*\+\^]/g, "."), 0 === a.indexOf("https") ? a = a.replace(":443", "[:0-9]*") : 0 === a.indexOf("https") && (a = a.replace(":80", "[:0-9]*"));
                 var d = "";
                 if (b.tiles.length > 1)
                     for (var e = b.tiles[0], f = b.tiles[1], g = 0; g < e.length; ++g) d += e.charAt(g) != f.charAt(g) ? "." : a.charAt(g) || "";
