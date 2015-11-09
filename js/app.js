@@ -14,7 +14,7 @@ function main() {
     .done(function(vis, layers) {
       // there are two layers, base layer and points layer
       var markers = layers[1].getSubLayer(1);
-      markers.set({ 'interactivity': ['cartodb_id', 'kuvaus', 'facebook_sivu']});
+      markers.set({ 'interactivity': ['cartodb_id', 'kuvaus', 'otsikko', 'facebook_sivu']});
       // sublayer.setInteraction(true)
       // // Set the custom infowindow template defined on the html
       // markers.infowindow.set('template', $('#infowindow_template').html());
@@ -31,7 +31,7 @@ function main() {
       vis.addOverlay({
         layer: markers,
         type: 'infobox',
-        template: '<h3>Otsikko</h3><img src="http://hs10.snstatic.fi/webkuva/taysi/700/1305986659655?ts=765" height="auto" width="100%"</img><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><p>{{kuvaus}}</p>',
+        template: '<h3>{{kuvaus}}</h3><img src="http://hs10.snstatic.fi/webkuva/taysi/700/1305986659655?ts=765" height="auto" width="100%"</img><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><p>{{kuvaus}}</p>',
         // template: '<h3>{{nimi}}</h3><p>{{kuvaus}}</p>',
         width: 200,
         position: 'bottom|left'
