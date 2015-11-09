@@ -7,7 +7,6 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://hegemonni.github.io/" # the base hostname & protocol for your site
 twitter_username: mikaelbrunila
 github_username:  hegemonni
-include: ['CartoDB']
 
 # Build settings
 markdown: kramdown
