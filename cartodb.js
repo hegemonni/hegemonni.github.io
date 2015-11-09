@@ -12781,8 +12781,8 @@
                             return a
                         }
                     }), cdb.config = new Config, cdb.config.set({
-                        cartodb_attributions: "CartoDB <a href='http://cartodb.com/attributions' target='_blank'>attribution</a>",
-                        cartodb_logo_link: "http://www.cartodb.com"
+                        cartodb_attributions: "CartoDB <a href='https://cartodb.com/attributions' target='_blank'>attribution</a>",
+                        cartodb_logo_link: "https://www.cartodb.com"
                     })
                 }(),
                 function() {
@@ -13101,7 +13101,7 @@
                     },
                     geocode: function(a, b) {
                         a = a.toLowerCase().replace(/Ã©/g, "e").replace(/Ã¡/g, "a").replace(/Ã­/g, "i").replace(/Ã³/g, "o").replace(/Ãº/g, "u").replace(/ /g, "+");
-                        var c = ""; - 1 === location.protocol.indexOf("http") && (c = "http:"), $.getJSON(c + "//query.yahooapis.com/v1/public/yql?q=" + encodeURIComponent('SELECT * FROM json WHERE url="http://where.yahooapis.com/geocode?q=' + a + "&appid=" + this.keys.app_id + '&flags=JX"') + "&format=json&callback=?", function(a) {
+                        var c = ""; - 1 === location.protocol.indexOf("https") && (c = "https:"), $.getJSON(c + "//query.yahooapis.com/v1/public/yql?q=" + encodeURIComponent('SELECT * FROM json WHERE url="https://where.yahooapis.com/geocode?q=' + a + "&appid=" + this.keys.app_id + '&flags=JX"') + "&format=json&callback=?", function(a) {
                             var c = [];
                             if (a && a.query && a.query.results && a.query.results.json && a.query.results.json.ResultSet && "0" != a.query.results.json.ResultSet.Found) {
                                 var d;
@@ -13124,7 +13124,7 @@
                     },
                     geocode: function(a, b) {
                         a = a.toLowerCase().replace(/Ã©/g, "e").replace(/Ã¡/g, "a").replace(/Ã­/g, "i").replace(/Ã³/g, "o").replace(/Ãº/g, "u").replace(/ /g, "+");
-                        var c = ""; - 1 === location.protocol.indexOf("http") && (c = "http:"), $.getJSON(c + "//places.nlp.nokia.com/places/v1/discover/search/?q=" + encodeURIComponent(a) + "&app_id=" + this.keys.app_id + "&app_code=" + this.keys.app_code + "&Accept-Language=en-US&at=0,0&callback=?", function(a) {
+                        var c = ""; - 1 === location.protocol.indexOf("https") && (c = "https:"), $.getJSON(c + "//places.nlp.nokia.com/places/v1/discover/search/?q=" + encodeURIComponent(a) + "&app_id=" + this.keys.app_id + "&app_code=" + this.keys.app_code + "&Accept-Language=en-US&at=0,0&callback=?", function(a) {
                             var c = [];
                             if (a && a.results && a.results.items && a.results.items.length > 0) {
                                 var d = a.results.items;
@@ -13239,10 +13239,10 @@
                         debug: !1,
                         tiler_domain: "cartodb.com",
                         tiler_port: "80",
-                        tiler_protocol: "http",
+                        tiler_protocol: "https",
                         sql_api_domain: "cartodb.com",
                         sql_api_port: "80",
-                        sql_api_protocol: "http",
+                        sql_api_protocol: "https",
                         extra_params: {},
                         cdn_url: null,
                         maxZoom: 28
