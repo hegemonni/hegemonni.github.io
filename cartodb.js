@@ -18837,7 +18837,7 @@
                     };
                     var b = function() {
                         Map.call(this, this), this.imageOptions = {}, this.error = null, this.supported_formats = ["png", "jpg"], this.defaults = {
-                            basemap_url_template: "https://{s}.basemaps.cartocdn.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                            basemap_url_template: "https://{s}.basemaps.cartocdn.global.ssl.fastly.net//light_all/{z}/{x}/{y}.png",
                             basemap_subdomains: ["a", "b", "c"],
                             format: "png",
                             zoom: 10,
@@ -18909,7 +18909,7 @@
                         },
                         _getDefaultBasemapLayer: function() {
                             return {
-                                type: "https",
+                                type: "http",
                                 options: {
                                     urlTemplate: this.defaults.basemap_url_template,
                                     subdomains: this.defaults.basemap_subdomains
@@ -18919,7 +18919,7 @@
                         _getHTTPBasemapLayer: function(a) {
                             var b = a.options.urlTemplate;
                             return b ? {
-                                type: "https",
+                                type: "http",
                                 options: {
                                     urlTemplate: b,
                                     subdomains: a.options.subdomains || this.defaults.basemap_subdomains
