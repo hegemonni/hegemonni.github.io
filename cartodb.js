@@ -18909,7 +18909,7 @@
                         },
                         _getDefaultBasemapLayer: function() {
                             return {
-                                type: "http",
+                                type: "https",
                                 options: {
                                     urlTemplate: this.defaults.basemap_url_template,
                                     subdomains: this.defaults.basemap_subdomains
@@ -18919,7 +18919,7 @@
                         _getHTTPBasemapLayer: function(a) {
                             var b = a.options.urlTemplate;
                             return b ? {
-                                type: "http",
+                                type: "https",
                                 options: {
                                     urlTemplate: b,
                                     subdomains: a.options.subdomains || this.defaults.basemap_subdomains
