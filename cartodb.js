@@ -2788,7 +2788,7 @@
                             else b = a[y.status], y.then(b, b)
                         }
                         return this
-                    }, p.url = ((a || p.url) + "").replace(Ua, "").replace(Za, Qa[1] + "//"), p.dataTypes = J.trim(p.dataType || "*").toLowerCase().split(bb), null == p.crossDomain && (l = db.exec(p.url.toLowerCase()), p.crossDomain = !(!l || l[1] == Qa[1] && l[2] == Qa[2] && (l[3] || ("http:" === l[1] ? 80 : 443)) == (Qa[3] || ("http:" === Qa[1] ? 80 : 443)))), p.data && p.processData && "string" != typeof p.data && (p.data = J.param(p.data, p.traditional)), n(fb, p, c, y), 2 === x) return !1;
+                    }, p.url = ((a || p.url) + "").replace(Ua, "").replace(Za, Qa[1] + "//"), p.dataTypes = J.trim(p.dataType || "*").toLowerCase().split(bb), null == p.crossDomain && (l = db.exec(p.url.toLowerCase()), p.crossDomain = !(!l || l[1] == Qa[1] && l[2] == Qa[2] && (l[3] || ("https:" === l[1] ? 80 : 443)) == (Qa[3] || ("https:" === Qa[1] ? 80 : 443)))), p.data && p.processData && "string" != typeof p.data && (p.data = J.param(p.data, p.traditional)), n(fb, p, c, y), 2 === x) return !1;
                 if (m = p.global, p.type = p.type.toUpperCase(), p.hasContent = !Ya.test(p.type), m && 0 === J.active++ && J.event.trigger("ajaxStart"), !p.hasContent && (p.data && (p.url += ($a.test(p.url) ? "&" : "?") + p.data, delete p.data), e = p.url, p.cache === !1)) {
                     var z = J.now(),
                         A = p.url.replace(cb, "$1_=" + z);
@@ -7986,7 +7986,7 @@
                 }, e.Control.Attribution = e.Control.extend({
                     options: {
                         position: "bottomright",
-                        prefix: '<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>'
+                        prefix: '<a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>'
                     },
                     initialize: function(a) {
                         e.setOptions(this, a), this._attributions = {}
@@ -9496,7 +9496,7 @@
             }
             var d = {},
                 e = a.threshold || 400,
-                f = "http://a.tiles.mapbox.com/mapbox/1.0.0/blue-marble-topo-bathy-jul/0/0/0.png?preventcache=" + +new Date,
+                f = "https://a.tiles.mapbox.com/mapbox/1.0.0/blue-marble-topo-bathy-jul/0/0/0.png?preventcache=" + +new Date,
                 g = 1,
                 h = void 0 === a.auto ? !0 : a.auto;
             return d.bw = function(a) {
