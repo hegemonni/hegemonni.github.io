@@ -14263,7 +14263,7 @@
                     _renderItem: function(a) {
                         view = new cdb.geo.ui.LegendItem({
                             model: a,
-                            className: a.get("value") && a.get("value").indexOf("http") >= 0 || a.get("type") && "image" == a.get("type") ? "bkg" : "",
+                            className: a.get("value") && a.get("value").indexOf("https") >= 0 || a.get("type") && "image" == a.get("type") ? "bkg" : "",
                             template: '		<div class="bullet" style="background: <%= value %>"></div> <%= name || ((name === false) ? "false": "null") %>'
                         }), this.$el.find("ul").append(view.render())
                     },
@@ -14300,7 +14300,7 @@
                     _renderItem: function(a) {
                         view = new cdb.geo.ui.LegendItem({
                             model: a,
-                            className: a.get("value") && a.get("value").indexOf("http") >= 0 ? "bkg" : "",
+                            className: a.get("value") && a.get("value").indexOf("https") >= 0 ? "bkg" : "",
                             template: '		<div class="bullet" style="background: <%= value %>"></div> <%= name || ((name === false) ? "false": "null") %>'
                         }), this.$el.find("ul").append(view.render())
                     },
@@ -14444,7 +14444,7 @@
                     _renderItem: function(a) {
                         view = new cdb.geo.ui.LegendItem({
                             model: a,
-                            className: a.get("value") && a.get("value").indexOf("http") >= 0 ? "bkg" : "",
+                            className: a.get("value") && a.get("value").indexOf("https") >= 0 ? "bkg" : "",
                             template: '		<div class="bullet" style="background:<%= value %>"></div>\n		<%= name || "null" %>'
                         }), this.$el.find("ul").append(view.render())
                     },
@@ -16004,7 +16004,7 @@
                             if (c) {
                                 if (b.mapProperties = new MapProperties(c), c.cdn_url) {
                                     var e = b.options.cdn_url = b.options.cdn_url || {};
-                                    e.http = c.cdn_url.http || e.http, e.https = c.cdn_url.https || e.https
+                                    e.https = c.cdn_url.https || e.http, e.https = c.cdn_url.https || e.https
                                 }
                                 b.urls = b._layerGroupTiles(b.mapProperties, b.options.extra_params), a && a(b.urls)
                             } else if (null !== b.named_map && d) a && a(null, d);
@@ -16614,7 +16614,7 @@
                                     subdomains: "abcd",
                                     minZoom: 0,
                                     maxZoom: 18,
-                                    attribution: 'Map designs by <a href="http://stamen.com/">Stamen</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, Provided by <a href="http://cartodb.com">CartoDB</a>'
+                                    attribution: 'Map designs by <a href="https://stamen.com/">Stamen</a>. Data by <a href="https://openstreetmap.org">OpenStreetMap</a>, Provided by <a href="http://cartodb.com">CartoDB</a>'
                                 }
                             },
                             b = function(a) {
@@ -16623,7 +16623,7 @@
                                     subdomains: "1234",
                                     minZoom: 0,
                                     maxZoom: 21,
-                                    attribution: 'Â©2012 Nokia <a href="http://here.net/services/terms" target="_blank">Terms of use</a>'
+                                    attribution: 'Â©2012 Nokia <a href="https://here.net/services/terms" target="_blank">Terms of use</a>'
                                 }
                             },
                             c = {
@@ -16733,10 +16733,10 @@
                             added: !1,
                             tiler_domain: "cartodb.com",
                             tiler_port: "80",
-                            tiler_protocol: "http",
+                            tiler_protocol: "https",
                             sql_api_domain: "cartodb.com",
                             sql_api_port: "80",
-                            sql_api_protocol: "http",
+                            sql_api_protocol: "https",
                             maxZoom: 30,
                             extra_params: {},
                             cdn_url: null,
@@ -17332,10 +17332,10 @@
                                 added: !1,
                                 tiler_domain: "cartodb.com",
                                 tiler_port: "80",
-                                tiler_protocol: "http",
+                                tiler_protocol: "https",
                                 sql_api_domain: "cartodb.com",
                                 sql_api_port: "80",
-                                sql_api_protocol: "http",
+                                sql_api_protocol: "https",
                                 extra_params: {},
                                 cdn_url: null,
                                 subdomains: null
@@ -18603,7 +18603,7 @@
                             var b = a.sql_api_port,
                                 c = a.sql_api_domain + (b ? ":" + b : ""),
                                 d = a.sql_api_protocol,
-                                e = "v1"; - 1 !== c.indexOf("cartodb.com") && (d = "http", c = "cartodb.com", e = "v2");
+                                e = "v1"; - 1 !== c.indexOf("cartodb.com") && (d = "https", c = "cartodb.com", e = "v2");
                             var f = new cartodb.SQL({
                                 user: a.user_name,
                                 protocol: d,
@@ -19239,11 +19239,11 @@
                     }
                     var c = cdb.vis.Layers,
                         d = {
-                            "https://dnv9my2eseobd.cloudfront.net/": "http://a.tiles.mapbox.com/",
-                            "https://maps.nlp.nokia.com/": "http://maps.nlp.nokia.com/",
-                            "https://tile.stamen.com/": "http://tile.stamen.com/",
-                            "https://{s}.maps.nlp.nokia.com/": "http://{s}.maps.nlp.nokia.com/",
-                            "https://cartocdn_{s}.global.ssl.fastly.net/": "http://{s}.api.cartocdn.com/"
+                            "https://dnv9my2eseobd.cloudfront.net/": "https://a.tiles.mapbox.com/",
+                            "https://maps.nlp.nokia.com/": "https://maps.nlp.nokia.com/",
+                            "https://tile.stamen.com/": "https://tile.stamen.com/",
+                            "https://{s}.maps.nlp.nokia.com/": "https://{s}.maps.nlp.nokia.com/",
+                            "https://cartocdn_{s}.global.ssl.fastly.net/": "https://{s}.api.cartocdn.com/"
                         };
                     c.register("tilejson", function(b, c) {
                         var d = c.tiles[0];
@@ -19286,7 +19286,7 @@
                         var d = null;
                         return void 0 !== a.layers || void 0 !== (a.kind || a.type) ? void _.defer(function() {
                             c(a)
-                        }) : (void 0 !== a.table && void 0 !== a.user ? d = b(a) : a.indexOf && 0 === a.indexOf("http") && (d = a), void(d ? cdb.core.Loader.get(d, c) : _.defer(function() {
+                        }) : (void 0 !== a.table && void 0 !== a.user ? d = b(a) : a.indexOf && 0 === a.indexOf("https") && (d = a), void(d ? cdb.core.Loader.get(d, c) : _.defer(function() {
                             c(null)
                         })))
                     }
